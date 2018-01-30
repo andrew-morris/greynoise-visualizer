@@ -1,4 +1,4 @@
-import { browser, by, element } from 'protractor';
+import { browser, by, element} from 'protractor';
 
 export class MapPage {
   navigateTo() {
@@ -15,6 +15,6 @@ export class MapPage {
 
   getMapMarkers(){
     browser.sleep(2000);
-    return element.all(by.css('.leaflet-marker-icon .marker-cluster'));
+    return element.all(by.css('.leaflet-marker-icon .marker-cluster')).first();
   }
 };

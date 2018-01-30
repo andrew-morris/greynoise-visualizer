@@ -1,4 +1,4 @@
-import { browser, by, element } from 'protractor';
+import { browser, by, element, ExpectedConditions } from 'protractor';
 
 export class TablePage {
   navigateTo() {
@@ -6,6 +6,8 @@ export class TablePage {
   }
 
   getTableElements() {
+    let EC = ExpectedConditions;
+    browser.wait(EC.visibilityOf(element(by.css('#mainTable tbody tr td a'))));
     return element.all(by.css('#mainTable tbody tr'));
   }
 
@@ -22,6 +24,6 @@ export class TablePage {
   }
 
   getOpenDialogElement() {
-    return element(by.tagName('p-dialog'));
+    return element(by.css('#dialogTable'));
   }
 };

@@ -28,5 +28,8 @@ before_script:
 script:
 - docker-compose up -d
 - docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained --start-options '-config api.disablekey=true' http://localhost
-- docker-compose exec flask_api nose2 -v
+- curl -s http://localhost/api/tags > /dev/null
 - cd frontend && ng test --watch false --browsers ChromeHeadless
+- ng e2e --environment=e2e
+- docker-compose exec redis redis-cli flushall
+- docker-compose exec flask_api nose2 -v

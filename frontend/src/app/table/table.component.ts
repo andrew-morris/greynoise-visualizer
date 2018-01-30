@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../api.service';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
@@ -25,6 +25,7 @@ export class TableComponent implements OnInit {
 	//used to load ip event data
 	ipEventData: any[];
 	display: any;
+
 	//filter options
 	selectCategory: SelectItem[];
 	categoryTemp: string[];

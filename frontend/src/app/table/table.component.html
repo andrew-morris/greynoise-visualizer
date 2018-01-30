@@ -44,7 +44,7 @@
     <ng-template let-row pTemplate="rowexpansion">
         <tr>
             <td [attr.colspan] = "5">
-               <p-table id="secondaryTable" [value]="eventData[row.name]" [rows]="15" [paginator]="true" [loading]="loadingDetail" selectionMode="single" (onRowSelect)="showDialog($event, ipTable)" autoLayout="true"  #detailTable>
+               <p-table id="secondaryTable" [value]="eventData[row.name]" [rows]="15" [paginator]="true" [loading]="loadingDetail" selectionMode="single" (onRowSelect)="showDialog($event, ipTable)" autoLayout="true" [responsive] = "true" #detailTable>
                     <ng-template pTemplate="header">
                         <tr>
                             <th pSortableColumn="ip">
@@ -102,7 +102,7 @@
 </p-blockUI>
 
 <p-dialog header="Other Associated Tags" [(visible)]="display" [modal]="true" [dismissableMask]="true" [draggable] = "true" >
-    <p-table [value]="ipEventData" [rows]="20" [paginator]="true" autoLayout="true" #ipTable>
+    <p-table id="dialogTable" [value]="ipEventData" [rows]="20" [paginator]="true" autoLayout="true" #ipTable>
         <ng-template pTemplate="header">
                 <tr>
                     <th pSortableColumn="name">
