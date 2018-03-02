@@ -10,7 +10,7 @@
 	-moz-border-radius: 5px; 
 	-webkit-border-radius: 5px; 
 	border: .1px solid lightgrey;
-	width: 60%;
+	width: 40%;
 }
 .search-input:hover{
 	border-color: grey;
@@ -33,6 +33,8 @@ tr td a{
 #mainTable{
 	display: block;
 	overflow-x: auto;
+	width: 96%;
+	margin: auto;
 }
 #secondaryTable table thead tr th p-sorticon span {
 	display: block !important;

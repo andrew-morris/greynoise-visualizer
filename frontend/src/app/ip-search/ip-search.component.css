@@ -2,10 +2,33 @@
 	text-align: center;
 	padding: 10px;
 }
-#ipTable{
-	padding: 10px;
+
+h2{
+	margin-left: 2%;
 }
-.SearchBox{
-	width: 40% !important;
+:host /deep/ .ip-table{
+	width: 96% !important;
 	margin: auto !important;
+	padding-top: 10px !important;
+}
+#ipsearchbox{
+	padding: 6px 15px 6px 1px;
+	margin: 3px; 
+	border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border: .1px solid lightgrey;
+	width: 30%;
+	font-size: 13px;
+}
+#ipsearchbox:hover{
+	border-color: grey;
+}
+#ipsearchbox:focus{
+	border-color: grey;
+}
+.singleIpMap{
+	height: 400px;
+	width: 96%;
+	margin: auto;
 }

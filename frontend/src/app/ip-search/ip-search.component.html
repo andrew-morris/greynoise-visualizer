@@ -1,18 +1,19 @@
 <p-messages [(value)]="msgs"></p-messages>
 
 <form name="searchForm" [formGroup]="searchForm" (ngSubmit)="loadIPDataOnSearch()" class="searchform" >
-	<input #ipinput id="ipsearchbox" type="text" class="form-control input-lg" placeholder="Enter an IPv4 Address" formControlName="search" />
+	<input #ipinput id="ipsearchbox" type="text" class="form-control input-lg ui-corner-all" placeholder="Enter an IPv4 Address" formControlName="search" />
 	
     <button id="submitButton" pButton type="submit" label = "Search" [disabled] = "!searchForm.valid"></button>
 </form>
 
-<h1 *ngIf="ipSearchedFor != undefined">Results for: {{ipSearchedFor}}</h1>
-<div class = "ui-g-12 singleIpMap" leaflet style="height: 400px;"
+<h2 *ngIf="ipSearchedFor != undefined">Results for: {{ipSearchedFor}}</h2>
+<div id="map" class = "singleIpMap" leaflet
 	 [leafletOptions]="options"
+     [leafletCenter]="center"
 	 [leafletLayers]="layers">
 </div>
 
-<p-table id="ipTable" [value]="ipRows" [rows]="20" [paginator]="true" autoLayout="true" [responsive] = "true" #ipTable>
+<p-table id="ipTable" [styleClass] = "'ip-table'" [value]="ipRows" [rows]="20" [paginator]="true" autoLayout="true" [responsive]="true" #ipTable>
     <ng-template pTemplate="header">
             <tr>
                 <th pSortableColumn="name">
